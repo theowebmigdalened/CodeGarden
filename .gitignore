@@ -27,3 +27,8 @@ data/meta/**
 # Local samples (демо/черновики)
 data/samples/**
 !data/samples/.keep
+
+# Local env files
+.env
+*.env
+.env.*
