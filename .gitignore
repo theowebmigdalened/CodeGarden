@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual envs
+venv/
+env/
+
+# Logs
+*.log
+
+# Editors/OS
+.DS_Store
+.idea/
+.vscode/
+
+# Local-only snippets (do not commit)
+data/snippets_code/**
+!data/snippets_code/.keep
+
+# Local meta/cache (можно не коммитить)
+data/meta/**
+!data/meta/.keep
+
+# Local samples (демо/черновики)
+data/samples/**
+!data/samples/.keep
