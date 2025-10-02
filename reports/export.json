@@ -1,0 +1,26 @@
+{
+  "index": {
+    "python-tips.md": {
+      "links": [
+        "Regex Cookbook"
+      ],
+      "tags": [
+        "python",
+        "tips"
+      ]
+    },
+    "regex-cookbook.md": {
+      "links": [
+        "Python Tips"
+      ],
+      "tags": [
+        "regex",
+        "tips"
+      ]
+    }
+  },
+  "graph": {
+    "python-tips.md": [],
+    "regex-cookbook.md": []
+  }
+}
