@@ -35,6 +35,13 @@ def write_note(title: str, content: str) -> str:
         f.write(f"# {title}\n\n{content.strip()}\n")
     return path
 
+
+# --- snippet: normalize_title ---
+def normalize_title(title: str) -> str:
+    """Базовая нормализация заголовка заметки."""
+    return " ".join(title.strip().split())
+# --- endsnippet ---
+
 def slugify(s: str) -> str:
     s = s.strip().lower()
     s = re.sub(r"[^a-z0-9\-_]+", "-", s)
