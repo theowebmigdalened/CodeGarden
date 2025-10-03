@@ -15,9 +15,5 @@ def top_nodes_by_degree(graph: Dict[str, List[str]], n: int = 5) -> List[Tuple[s
     deg = {k: len(v) for k, v in graph.items()}
     return sorted(deg.items(), key=lambda x: -x[1])[:n]
 
-# --- snippet: normalize_title ---
-def normalize_title(title: str) -> str:
-    """Базовая нормализация заголовка заметки."""
-    return " ".join(title.strip().split())
-# --- endsnippet ---
+
 
