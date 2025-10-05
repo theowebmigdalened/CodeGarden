@@ -34,3 +34,5 @@ def slugify(s: str) -> str:
     s = re.sub(r"[^a-z0-9\-_]+", "-", s)
     s = re.sub(r"-{2,}", "-", s).strip("-")
     return s
+
+# autosave 2025-10-05T18:29:29.544381
