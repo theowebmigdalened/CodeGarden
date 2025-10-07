@@ -67,3 +67,4 @@ def index_notes() -> str:
     with open(out, "w", encoding="utf-8") as f:
         json.dump(idx, f, ensure_ascii=False, indent=2)
     return out
+# tweak 2025-10-07T11:55:40.392075
