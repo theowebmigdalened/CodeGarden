@@ -16,3 +16,4 @@ def backlinks_map(index: dict) -> dict:
 
 def extract_headings(md_text: str):
     return [(m.group(1), m.group(2).strip()) for m in HEADING_RX.finditer(md_text or "")]
+# tweak 2025-10-10T12:51:32.415950
