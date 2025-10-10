@@ -53,6 +53,17 @@ def extract_links_and_tags(text: str) -> Dict[str, List[str]]:
     tags = TAG_RX.findall(text or "")
     return {"links": list(sorted(set(links))), "tags": list(sorted(set(tags)))}
 
+
+# --- snippet: top_tags ---
+def top_tags(index: dict, n: int = 10):
+    """Топ N тегов по частоте."""
+    from collections import Counter
+    c = Counter()
+    for meta in index.values():
+        c.update(meta.get("tags", []))
+    return c.most_common(n)
+# --- endsnippet ---
+
 def index_notes() -> str:
     """
     Пробегает по всем заметкам, извлекает ссылки/теги, пишет индекс в data/meta/index.json
