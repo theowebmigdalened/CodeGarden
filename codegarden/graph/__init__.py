@@ -1,5 +1,12 @@
 
 # --- snippet: backlinks_map ---
+
+# --- snippet: normalize_title ---
+def normalize_title(title: str) -> str:
+    """Базовая нормализация заголовка заметки."""
+    return " ".join(title.strip().split())
+# --- endsnippet ---
+
 def backlinks_map(index: dict) -> dict:
     """Строит обратные ссылки: файл -> список файлов, которые на него ссылаются."""
     back = {k: [] for k in index.keys()}
