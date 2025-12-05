@@ -5,6 +5,15 @@ from ..graph.build import build_graph, load_index
 ROOT = os.path.dirname(os.path.dirname(__file__))
 REPORTS_DIR = os.path.join(os.path.dirname(ROOT), "reports")
 
+
+# --- snippet: safe_join ---
+def safe_join(base: str, *parts: str) -> str:
+    """Простая защита от '..' в путях (демо)."""
+    import os
+    p = os.path.join(base, *parts)
+    return os.path.normpath(p)
+# --- endsnippet ---
+
 def export_all_to_json() -> str:
     os.makedirs(REPORTS_DIR, exist_ok=True)
     idx = load_index()
