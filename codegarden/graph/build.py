@@ -38,3 +38,5 @@ def slugify(s: str) -> str:
 # autosave 2025-10-05T18:29:29.544381
 
 # autosave 2025-10-27T10:03:52.537678
+
+# autosave 2025-12-05T18:04:44.496119
