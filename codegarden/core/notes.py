@@ -18,6 +18,15 @@ def list_notes() -> List[str]:
     ensure_dirs()
     return sorted([f for f in os.listdir(NOTES_DIR) if f.endswith(".md")])
 
+
+# --- snippet: safe_join ---
+def safe_join(base: str, *parts: str) -> str:
+    """Простая защита от '..' в путях (демо)."""
+    import os
+    p = os.path.join(base, *parts)
+    return os.path.normpath(p)
+# --- endsnippet ---
+
 def read_note(filename: str) -> Optional[str]:
     path = os.path.join(NOTES_DIR, filename)
     if not os.path.exists(path):
