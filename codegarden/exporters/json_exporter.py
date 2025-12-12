@@ -14,6 +14,8 @@ def safe_join(base: str, *parts: str) -> str:
     return os.path.normpath(p)
 # --- endsnippet ---
 
+
+
 def export_all_to_json() -> str:
     os.makedirs(REPORTS_DIR, exist_ok=True)
     idx = load_index()
