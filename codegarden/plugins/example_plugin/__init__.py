@@ -8,6 +8,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 NOTES_DIR = os.path.join(os.path.dirname(ROOT), "notes")
 META_DIR = os.path.join(os.path.dirname(ROOT), "data", "meta")
 
+
+# --- snippet: top_tags ---
+def top_tags(index: dict, n: int = 10):
+    """Топ N тегов по частоте."""
+    from collections import Counter
+    c = Counter()
+    for meta in index.values():
+        c.update(meta.get("tags", []))
+    return c.most_common(n)
+# --- endsnippet ---
+
 def run():
     idx_path = os.path.join(META_DIR, "index.json")
     if not os.path.exists(idx_path):
