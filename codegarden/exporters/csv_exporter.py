@@ -15,3 +15,5 @@ def export_tags_csv() -> str:
             tags = ",".join(meta.get("tags", []))
             w.writerow([fn, tags])
     return path
+
+# autosave 2025-12-26T14:26:41.652257
