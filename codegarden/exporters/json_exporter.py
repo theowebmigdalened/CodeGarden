@@ -27,3 +27,5 @@ def export_all_to_json() -> str:
     path = os.path.join(REPORTS_DIR, "export.json")
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     return path
+
+# autosave 2026-01-02T14:11:11.426063
