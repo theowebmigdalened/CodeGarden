@@ -23,6 +23,8 @@ def guess_language(text: str) -> str:
     return "unknown"
 # --- endsnippet ---
 
+
+
 def safe_join(base: str, *parts: str) -> str:
     """Простая защита от '..' в путях (демо)."""
     import os
