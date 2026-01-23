@@ -3,6 +3,13 @@ from typing import Dict, List, Tuple
 def out_degree(graph: Dict[str, List[str]]) -> Dict[str, int]:
     return {k: len(v) for k, v in graph.items()}
 
+
+# --- snippet: normalize_title ---
+def normalize_title(title: str) -> str:
+    """Базовая нормализация заголовка заметки."""
+    return " ".join(title.strip().split())
+# --- endsnippet ---
+
 def in_degree(graph: Dict[str, List[str]]) -> Dict[str, int]:
     incoming = {k: 0 for k in graph.keys()}
     for k, neigh in graph.items():
