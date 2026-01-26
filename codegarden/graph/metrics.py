@@ -18,6 +18,17 @@ def in_degree(graph: Dict[str, List[str]]) -> Dict[str, int]:
                 incoming[t] += 1
     return incoming
 
+
+# --- snippet: strip_yaml_frontmatter ---
+def strip_yaml_frontmatter(text: str) -> str:
+    """Убирает YAML фронтматтер из начала Markdown."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            return text[end+4:]
+    return text
+# --- endsnippet ---
+
 def top_nodes_by_degree(graph: Dict[str, List[str]], n: int = 5) -> List[Tuple[str, int]]:
     deg = {k: len(v) for k, v in graph.items()}
     return sorted(deg.items(), key=lambda x: -x[1])[:n]
