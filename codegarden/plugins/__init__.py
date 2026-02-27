@@ -17,3 +17,14 @@ def top_tags(index: dict, n: int = 10):
 
 # autosave 2025-12-15T10:54:40.678339
 # tweak 2025-12-26T15:41:53.295392
+
+# --- snippet: strip_yaml_frontmatter ---
+def strip_yaml_frontmatter(text: str) -> str:
+    """Убирает YAML фронтматтер из начала Markdown."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            return text[end+4:]
+    return text
+# --- endsnippet ---
+
