@@ -1,15 +1,5 @@
 
-# --- snippet: safe_join ---
 
-# --- snippet: strip_yaml_frontmatter ---
-def strip_yaml_frontmatter(text: str) -> str:
-    """Убирает YAML фронтматтер из начала Markdown."""
-    if text.startswith("---"):
-        end = text.find("\n---", 3)
-        if end != -1:
-            return text[end+4:]
-    return text
-# --- endsnippet ---
 
 
 # --- snippet: guess_language ---
