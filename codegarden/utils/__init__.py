@@ -17,6 +17,13 @@ def strip_yaml_frontmatter(text: str) -> str:
     return text
 # --- endsnippet ---
 
+
+# --- snippet: normalize_title ---
+def normalize_title(title: str) -> str:
+    """Базовая нормализация заголовка заметки."""
+    return " ".join(title.strip().split())
+# --- endsnippet ---
+
 def top_tags(index: dict, n: int = 10):
     """Топ N тегов по частоте."""
     from collections import Counter
