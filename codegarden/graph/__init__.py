@@ -19,6 +19,15 @@ def backlinks_map(index: dict) -> dict:
 
 
 # --- snippet: top_tags ---
+
+# --- snippet: safe_join ---
+def safe_join(base: str, *parts: str) -> str:
+    """Простая защита от '..' в путях (демо)."""
+    import os
+    p = os.path.join(base, *parts)
+    return os.path.normpath(p)
+# --- endsnippet ---
+
 def top_tags(index: dict, n: int = 10):
     """Топ N тегов по частоте."""
     from collections import Counter
