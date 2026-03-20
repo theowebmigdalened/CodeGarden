@@ -10,6 +10,17 @@ META_DIR = os.path.join(os.path.dirname(ROOT), "data", "meta")
 LINK_RX = re.compile(r"\[\[([^\[\]]+)\]\]")  # [[Note Title]]
 TAG_RX = re.compile(r"(?<!\w)#([a-zA-Z0-9_\-]+)")
 
+
+# --- snippet: strip_yaml_frontmatter ---
+def strip_yaml_frontmatter(text: str) -> str:
+    """Убирает YAML фронтматтер из начала Markdown."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            return text[end+4:]
+    return text
+# --- endsnippet ---
+
 def ensure_dirs():
     os.makedirs(NOTES_DIR, exist_ok=True)
     os.makedirs(META_DIR, exist_ok=True)
