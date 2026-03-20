@@ -26,3 +26,14 @@ def normalize_title(title: str) -> str:
     return " ".join(title.strip().split())
 # --- endsnippet ---
 
+
+# --- snippet: strip_yaml_frontmatter ---
+def strip_yaml_frontmatter(text: str) -> str:
+    """Убирает YAML фронтматтер из начала Markdown."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            return text[end+4:]
+    return text
+# --- endsnippet ---
+
