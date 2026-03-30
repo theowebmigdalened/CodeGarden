@@ -28,3 +28,4 @@ def strip_yaml_frontmatter(text: str) -> str:
     return text
 # --- endsnippet ---
 
+# tweak 2026-03-30T10:18:05.483375
