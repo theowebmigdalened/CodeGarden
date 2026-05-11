@@ -12,6 +12,8 @@ def safe_join(base: str, *parts: str) -> str:
     return os.path.normpath(p)
 # --- endsnippet ---
 
+
+
 def guess_language(text: str) -> str:
     """Супер-простая евристика языка по символам."""
     import re
