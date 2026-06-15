@@ -21,6 +21,18 @@ def export_tags_csv() -> str:
 # autosave 2026-01-16T18:36:35.374958
 
 # --- snippet: normalize_title ---
+
+# --- snippet: guess_language ---
+def guess_language(text: str) -> str:
+    """Супер-простая евристика языка по символам."""
+    import re
+    cyr = len(re.findall(r"[А-Яа-яЁё]", text))
+    lat = len(re.findall(r"[A-Za-z]", text))
+    if cyr > lat: return "ru"
+    if lat > cyr: return "en"
+    return "unknown"
+# --- endsnippet ---
+
 def normalize_title(title: str) -> str:
     """Базовая нормализация заголовка заметки."""
     return " ".join(title.strip().split())
