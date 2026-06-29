@@ -27,6 +27,15 @@ def in_degree(graph: Dict[str, List[str]]) -> Dict[str, int]:
 
 
 # --- snippet: strip_yaml_frontmatter ---
+
+# --- snippet: safe_join ---
+def safe_join(base: str, *parts: str) -> str:
+    """Простая защита от '..' в путях (демо)."""
+    import os
+    p = os.path.join(base, *parts)
+    return os.path.normpath(p)
+# --- endsnippet ---
+
 def strip_yaml_frontmatter(text: str) -> str:
     """Убирает YAML фронтматтер из начала Markdown."""
     if text.startswith("---"):
